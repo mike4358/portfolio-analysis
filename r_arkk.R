@@ -57,7 +57,7 @@ returns_df <- as.data.frame(do.call(merge, returns))
 colnames(returns_df) <- gsub(".Adjusted", "", colnames(returns_df))
 returns_df <- returns_df[,tickers]
 
-# restrict to only rolling 3 years
+# restrict to only rolling 2 years
 first_valid_idx <- min(which(!is.na(rowSums(returns_df))))
 last_idx <- dim(returns_df)[1]
 first_idx <- last_idx - 504 + 1
